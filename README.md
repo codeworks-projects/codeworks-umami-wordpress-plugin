@@ -1,6 +1,15 @@
-# CodeWorksUmami - Umami Analytics Integration for WordPress
+# CodeWorks Umami: WordPress Umami Analytics Integration
 
-Integrate Umami Analytics with your WordPress site using the CodeWorksUmami plugin. This plugin allows you to easily add Umami tracking to your website without modifying your theme files, leveraging WordPress's native settings API and script management.
+Seamlessly integrate [Umami Analytics](https://umami.is/) with your WordPress site, enabling privacy-focused, self-hosted web analytics without modifying your theme files.
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [License](#license)
+- [Credits](#credits)
 
 ## Features
 
@@ -12,7 +21,7 @@ Integrate Umami Analytics with your WordPress site using the CodeWorksUmami plug
 
 ## Installation
 
-1.  **Download** the plugin ZIP file from the [GitHub repository](https://github.com/codeworks-projects/codeworks-umami-wordpress-plugin)
+1.  **Download** the plugin ZIP file from the [releases page](https://github.com/codeworks-projects/codeworks-umami-wordpress-plugin/releases).
 2.  **Upload** the plugin to your WordPress site via `Plugins > Add New > Upload Plugin`.
 3.  **Activate** the plugin through the 'Plugins' menu in WordPress.
 
@@ -27,13 +36,14 @@ The Umami tracking script will now be automatically added to the footer of your 
 
 ## Usage
 
-Once configured, the plugin works automatically. Your website's traffic data will be sent to your Umami Analytics instance.
+Once configured, the plugin operates automatically, sending your website's traffic data to your specified Umami Analytics instance. You can verify proper integration by checking your Umami Analytics dashboard for incoming data.
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ---
+
 **Codeworks:** [https://codeworks.build](https://codeworks.build)
 
 **Luca Visciola:** [https://github.com/melasistema](https://github.com/melasistema)
