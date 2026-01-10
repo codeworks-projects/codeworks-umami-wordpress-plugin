@@ -29,7 +29,11 @@ The Umami tracking script will now be automatically added to the footer of your 
 
 Once configured, the plugin works automatically. Your website's traffic data will be sent to your Umami Analytics instance.
 
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
 ---
-**Codeworks - Luca Visciola**
-[https://codeworks.build](https://codeworks.build)
-[https://github.com/melasistema](https://github.com/melasistema)
+**Codeworks:** [https://codeworks.build](https://codeworks.build)
+
+**Luca Visciola:** [https://github.com/melasistema](https://github.com/melasistema)
