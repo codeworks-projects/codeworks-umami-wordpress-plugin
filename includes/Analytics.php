@@ -15,7 +15,7 @@ final class Analytics
 
     public static function enqueue_scripts(): void
     {
-        $options = get_option( Constants::OPTION_KEY );
+        $options    = get_option( Constants::OPTION_KEY );
         $website_id = $options['umami_website_id'] ?? '';
         $script_url = $options['umami_script_url'] ?? '';
 
@@ -25,17 +25,13 @@ final class Analytics
         }
 
         wp_enqueue_script(
-            'codeworks-umami-analytics',
-            $script_url,
-            [],
-            null, // Umami script does not typically have a version
-            true // Enqueue in the footer
+                'codeworks-umami-analytics',
+                $script_url,
+                [],
+                null,
+                true
         );
 
-        // Add data-website-id attribute to the script tag
-        wp_script_add_data( 'codeworks-umami-analytics', 'data-website-id', $website_id );
-        // For Umami, we also need to add 'async' and 'defer' attributes.
-        // This requires a filter on script_loader_tag
         add_filter( 'script_loader_tag', [ self::class, 'add_script_attributes' ], 10, 3 );
     }
 
@@ -56,17 +52,35 @@ final class Analytics
 
     public static function add_script_attributes( string $tag, string $handle, string $src ): string
     {
-        if ( 'codeworks-umami-analytics' === $handle ) {
-            // Add async and defer attributes
-            $tag = str_replace( '<script', '<script async defer', $tag );
-
-            // Add data-website-id attribute
-            $options = get_option( Constants::OPTION_KEY );
-            $website_id = $options['umami_website_id'] ?? '';
-            if ( ! empty( $website_id ) ) {
-                $tag = str_replace( ' src=', ' data-website-id="' . esc_attr( $website_id ) . '" src=', $tag );
-            }
+        if ( 'codeworks-umami-analytics' !== $handle ) {
+            return $tag;
         }
+
+        $options    = get_option( Constants::OPTION_KEY );
+        $website_id = $options['umami_website_id'] ?? '';
+
+        if ( empty( $website_id ) ) {
+            return $tag;
+        }
+
+        // Add async + defer if not already present
+        if ( ! str_contains( $tag, ' async' ) ) {
+            $tag = str_replace( '<script ', '<script async ', $tag );
+        }
+
+        if ( ! str_contains( $tag, ' defer' ) ) {
+            $tag = str_replace( '<script ', '<script defer ', $tag );
+        }
+
+        // Add data-website-id safely
+        if ( ! str_contains( $tag, 'data-website-id=' ) ) {
+            $tag = str_replace(
+                    ' src=',
+                    ' data-website-id="' . esc_attr( $website_id ) . '" src=',
+                    $tag
+            );
+        }
+
         return $tag;
     }
 }

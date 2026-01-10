@@ -22,7 +22,7 @@ define( 'CODEWORKS_UMAMI_URL', plugin_dir_url( __FILE__ ) );
 require_once __DIR__ . '/includes/Constants.php';
 require_once __DIR__ . '/includes/Helpers.php';
 require_once __DIR__ . '/includes/Analytics.php';
-require_once __DIR__ . '/includes/Plugins.php';
+require_once __DIR__ . '/includes/Plugin.php';
 
 Codeworks\Umami\Plugin::init();
 
