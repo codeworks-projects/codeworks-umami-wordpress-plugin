@@ -3,7 +3,7 @@
  * Plugin Name: Codeworks Umami
  * Plugin URI: https://codeworks.build
  * Description: Integrate Umami Analytics into WordPress.
- * Version: 0.0.1
+ * Version: 0.1.0
  * Author: Codeworks - Luca Visciola
  * Author URI: https://github.com/melasistema
  * Text Domain: codeworks-umami
