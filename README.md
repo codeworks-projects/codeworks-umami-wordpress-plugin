@@ -21,7 +21,7 @@ Seamlessly integrate [Umami Analytics](https://umami.is/) with your WordPress si
 
 ## Installation
 
-1.  **Download** the plugin ZIP file from the [releases page](https://github.com/codeworks-projects/codeworks-umami-wordpress-plugin/releases).
+1.  **Download** the plugin ZIP file.
 2.  **Upload** the plugin to your WordPress site via `Plugins > Add New > Upload Plugin`.
 3.  **Activate** the plugin through the 'Plugins' menu in WordPress.
 
